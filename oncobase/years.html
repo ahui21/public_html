@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Over the Years - Oncobase | Databases 600.315/415</title>
+    <meta name="description" content="Oncobase is the go to site for your cancer questions ">
+    <meta name="author" content="Alwin Hui and Max Yeo">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <meta name="theme-color" content="#2c2f43">
+
+    <meta property="og:title" content="Over the Years"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:site_name" content="Oncobase | Databases 600.315/415"/>
+    <meta property="og:description" content=""/>
+
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<div id="wrapper">
+	    <div id="main">
+	        <div class="grid">
+	            <h1>Oncobase</h1>
+	            <div>
+		            <select name="race" id="race" class="graph-attribute" onchange="showData(this.value)">
+	                    <option value="All (includes Hispanic)">people</option>
+	                    <option value="White (includes Hispanic)">whites</option>
+	                    <option value="Black (includes Hispanic)">blacks</option>
+	                </select>
+	                <select name="gender" id="gender" class="graph-attribute" onchange="showData(this.value)">
+	                    <option value="Both Sexes">of all sexes</option>
+	                    <option value="Male">males</option>
+	                    <option value="Female">females</option>
+	                </select>
+	                <p>with</p>
+	                <select name="cancer" id="cancer" class="graph-attribute" onchange="showData(this.value)">
+                        <option value="All Sites">any kind of</option>
+                        <option value="Acute Lymphocytic Leukemia">acute lymphocytic leukemia</option>
+                        <option value="Acute Monocytic Leukemia">acute monocytic leukemia</option>
+                        <option value="Acute Myeloid Leukemia">acute myeloid leukemia</option>
+                        <option value="Anus, anal canal & anorectum">anus, anal canal & anorectum</option>
+                        <option value="Bones and Joints">bones and joints</option>
+                        <option value="Brain and Other Nervous System">brain and other nervous system</option>
+                        <option value="Breast (In Situ), Female">breast (in situ), female</option>
+                        <option value="Cervix Uteri">cervix uteri</option>
+                        <option value="Chronic Lymphocytic Leukemia">chronic lymphocytic leukemia</option>
+                        <option value="Chronic Myeloid Leukemia">chronic myeloid leukemia</option>
+                        <option value="Colon">colon</option>
+                        <option value="Colon and Rectum">colon and rectum</option>
+                        <option value="Corpus and Uterus, NOS">corpus and uterus, NOS</option>
+                        <option value="Digestive system">digestive system</option>
+                        <option value="Esophagus">esophagus</option>
+                        <option value="Eye and Orbit">eye and orbit</option>
+                        <option value="Female Breast">female breast</option>
+                        <option value="Female genital system">female genital system</option>
+                        <option value="Floor of mouth">floor of mouth</option>
+                        <option value="Gallbladder">gallbladder</option>
+                        <option value="Gum & other mouth">gum & other mouth</option>
+                        <option value="Hodgkin Lymphoma">hodgkin lymphoma</option>
+                        <option value="Kaposi Sarcoma">kaposi sarcoma</option>
+                        <option value="Kidney and Renal Pelvis">kidney and renal pelvis</option>
+                        <option value="Larynx">larynx</option>
+                        <option value="Leukemia">leukemia</option>
+                        <option value="Lip">lip</option>
+                        <option value="Liver and Intrahepatic Bile Duct">liver and intrahepatic bile duct</option>
+                        <option value="Lung and Bronchus">lung and bronchus</option>
+                        <option value="Lymphocytic Leukemia">lymphocytic leukemia</option>
+                        <option value="Male Breast">male breast</option>
+                        <option value="Melanoma of the Skin">melanoma</option>
+                        <option value="Mesothelioma">mesothelioma</option>
+                        <option value="Myeloid and Monocytic Leukemia">myeloid and monocytic leukemia</option>
+                        <option value="Myeloma">myeloma</option>
+                        <option value="Non-Hodgkin Lymphoma">non-hodgkin lymphoma</option>
+                        <option value="Oral Cavity and Pharynx">oral cavity and pharynx</option>
+                        <option value="Oropharynx & Tonsil">oropharynx & tonsil</option>
+                        <option value="Ovary">ovary</option>
+                        <option value="Pancreas">pancreas</option>
+                        <option value="Prostate">prostate</option>
+                        <option value="Rectum">rectum</option>
+                        <option value="Salivary gland">salivary gland</option>
+                        <option value="Small intestine">small intestine</option>
+                        <option value="Soft Tissue includes Heart">soft tissue includes heart</option>
+                        <option value="Soft Tissue including Heart">soft tissue including heart</option>
+                        <option value="Stomach">stomach</option>
+                        <option value="Testis">testis</option>
+                        <option value="Thyroid">thyroid</option>
+                        <option value="Tongue">tongue</option>
+                        <option value="Urinary Bladder (Invasive & In Situ)">urinary bladder</option>
+                        <option value="Vagina">vagina</option>
+                        <option value="Vulva">vulva</option>
+                    </select>
+	                <p>cancer over the years</p>
+	            </div>
+	            <div id="graph"></div>
+	            <label><input id="sort-switch" type="checkbox"> Sort values</label>
+	            <div id="back-home">
+	                <a href="index.html">Find another cancer stat</a>
+	            </div>
+	        </div>
+	    </div>
+	    
+	    <footer>
+	        <h6>© ONCOBASE. ALL RIGHTS RESERVED 2015</h6>
+	    </footer>
+	</div>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/style.js"></script>
+    <script type="text/javascript" src="js/bar.js"></script>
+</body>
+</html>
